@@ -30,6 +30,26 @@ This repository contains the code and dataset for our paper:
 
 INP-X surgically restores original pixels outside the edited region while preserving the generated content within the mask. If detectors truly identify synthetic content, they should spot it in exchanged images since the fake content remains intact.
 
+## VAE-Induced Artifacts
+
+The VAE encoding-decoding process introduces subtle but detectable artifacts across the entire image:
+
+| Original | Standard Inpainting |
+|:--------:|:-------------------:|
+| ![Original](figures/original.jpeg) | ![Inpainted](figures/inpainted.jpeg) |
+
+### Verification of VAE Artifacts
+
+![VAE Artifact Verification](figures/vae_artifact_verification.jpeg)
+
+*Columns: (1) Original Image, (2) Mask, (3) Inpainted Result, (4) High-Frequency Filters, (5) VAE Reconstruction Artifacts, (6) Difference Map. Note the strong correlation between VAE artifacts and inpainting differences.*
+
+## Inpainting Comparison
+
+![Inpainting Comparison](figures/inpainting_comparison_grid.jpeg)
+
+*Comparison of standard inpainting vs. INP-X. The difference maps reveal that standard inpainting introduces global artifacts across the entire image, while INP-X produces differences only within the masked region.*
+
 ## Dataset
 
 We construct a **90K-image benchmark** extending Semi-Truths across 4 datasets:
@@ -69,6 +89,14 @@ Inpainting is performed using three models:
 | Hive Moderation | **INP-X** | **0.548** | **0.578** |
 | Sightengine | INP | 0.926 | 0.935 |
 | Sightengine | **INP-X** | **0.550** | **0.588** |
+
+## Localization
+
+Training on INP-X images improves detector localization performance:
+
+![Localization Examples](figures/more_localizations.jpeg)
+
+*Localization examples via GradCAM. (a) Mask indicates the inpainted region. (b) Standard inpainting triggers global attention. (c) INP-X better localizes attention to the actual edited region.*
 
 ## Installation
 
