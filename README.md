@@ -2,7 +2,6 @@
 
 **AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange**
 
-[![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://icml.cc/)
 [![Dataset](https://img.shields.io/badge/Dataset-90K_Images-green.svg)](#dataset)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -10,7 +9,7 @@
 
 Modern deep learning-based inpainting enables realistic local image manipulation, raising critical challenges for reliable detection. However, we observe that **current detectors primarily rely on global artifacts** that appear as inpainting side effects, rather than on locally synthesized content.
 
-This repository contains the code and dataset for our ICML 2026 paper:
+This repository contains the code and dataset for our paper:
 
 > **AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange**
 > 
@@ -109,23 +108,13 @@ def inpainting_exchange(original, inpainted, mask):
 If you find this work useful, please cite:
 
 ```bibtex
-@inproceedings{nebioglu2026inpx,
+@article{nebioglu2025inpx,
   title={AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange},
   author={Nebioglu, Elif and Bilgi{\c{c}}, Emirhan and Popescu, Adrian},
-  booktitle={International Conference on Machine Learning (ICML)},
-  year={2026}
+  year={2025}
 }
 ```
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-- Elif Nebioglu - elifnebiogllu@gmail.com
-- Emirhan Bilgiç - emirhan.bilgic@ip-paris.fr
-
-## Acknowledgments
-
-We thank the authors of Semi-Truths for providing the base dataset, and the developers of Stable Diffusion, Kandinsky, and OpenJourney for their inpainting models.
