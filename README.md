@@ -108,7 +108,7 @@ def inpainting_exchange(original, inpainted, mask):
 If you find this work useful, please cite:
 
 ```bibtex
-@article{nebioglu2025inpx,
+@article{nebioglu-bilgic2025inpx,
   title={AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange},
   author={Nebioglu, Elif and Bilgi{\c{c}}, Emirhan and Popescu, Adrian},
   year={2025}
