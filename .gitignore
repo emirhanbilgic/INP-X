@@ -1,0 +1,17 @@
+# LaTeX
+*.tex
+*.sty
+*.bst
+*.bib
+*.aux
+*.log
+*.out
+
+# Generated Figures & PDFs
+*.pdf
+
+# Specific unused figures
+figures/repaint.jpeg
+figures/scatter-figures.png
+figures/vae_artifact_flux.jpeg
+figures/vae_artifact_sdxl.jpeg
