@@ -1,5 +1,8 @@
 # INP-X: Inpainting Exchange
 
+<video src="PaperAnimation.mp4" controls="controls" style="max-width: 100%;">
+</video>
+
 **AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange**
 
 [![Dataset](https://img.shields.io/badge/Dataset-90K_Images-green.svg)](#dataset)
@@ -136,10 +139,10 @@ def inpainting_exchange(original, inpainted, mask):
 If you find this work useful, please cite:
 
 ```bibtex
-@article{nebioglu-bilgic2025inpx,
+@article{nebioglu-bilgic2026inpx,
   title={AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange},
   author={Nebioglu, Elif and Bilgi{\c{c}}, Emirhan and Popescu, Adrian},
-  year={2025}
+  year={2026}
 }
 ```
 
