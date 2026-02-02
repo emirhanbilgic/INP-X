@@ -1,7 +1,6 @@
 # INP-X: Inpainting Exchange
 
-<video src="PaperAnimation.mp4" controls="controls" style="max-width: 100%;">
-</video>
+![Inpainting Exchange Animation](PaperAnimation.gif)
 
 **AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange**
 
