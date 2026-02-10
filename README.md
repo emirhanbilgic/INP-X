@@ -1,4 +1,6 @@
 # INP-X: Inpainting Exchange
+Official repo for the paper: AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange https://arxiv.org/abs/2602.00192 
+
 Dataset: 
 https://www.kaggle.com/datasets/emirhanbilgic/inpainting-exchange/data
 
