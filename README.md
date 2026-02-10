@@ -1,11 +1,15 @@
 # INP-X: Inpainting Exchange
+Dataset: 
+https://www.kaggle.com/datasets/emirhanbilgic/inpainting-exchange/data
 
 ![Inpainting Exchange Animation](PaperAnimation.gif)
 
 **AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange**
 
-[![Dataset](https://img.shields.io/badge/Dataset-90K_Images-green.svg)](#dataset)
+[![Dataset](https://img.shields.io/badge/Dataset-90K_Images-green.svg)](https://www.kaggle.com/datasets/emirhanbilgic/inpainting-exchange/data)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+---
 
 ## Overview
 
@@ -13,11 +17,25 @@ Modern deep learning-based inpainting enables realistic local image manipulation
 
 This repository contains the code and dataset for our paper:
 
-> **AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange**
-> 
-> Elif Nebioglu*, Emirhan Bilgiç*, Adrian Popescu
+> **AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange**  
+> Elif Nebioglu*, Emirhan Bilgiç*, Adrian Popescu  
+> *Equal Contribution  
 >
-> *Equal Contribution
+> **arXiv:** https://arxiv.org/abs/2602.00192
+
+---
+
+## TODO
+
+- [x] Animation for better understanding
+- [x] Release of the dataset
+- [x] Example notebook for dataset usage and detector testing
+- [ ] Release of all training and testing code
+
+Example notebook:  
+https://www.kaggle.com/code/emirhanbilgic/inp-x-example-dataset-usage-and-detector-testing
+
+---
 
 ## Key Findings
 
@@ -26,11 +44,15 @@ This repository contains the code and dataset for our paper:
 - **Detector vulnerability**: Under INP-X, pretrained state-of-the-art detectors exhibit dramatic accuracy drops (e.g., from 91% to 55%), frequently approaching chance level
 - **Improved training**: Training on INP-X images yields better generalization and localization than standard inpainting
 
+---
+
 ## Method
 
 ![INP-X Pipeline](figures/teaser.png)
 
 INP-X surgically restores original pixels outside the edited region while preserving the generated content within the mask. If detectors truly identify synthetic content, they should spot it in exchanged images since the fake content remains intact.
+
+---
 
 ## VAE-Induced Artifacts
 
@@ -46,29 +68,41 @@ The VAE encoding-decoding process introduces subtle but detectable artifacts acr
 
 *Columns: (1) Original Image, (2) Mask, (3) Inpainted Result, (4) High-Frequency Filters, (5) VAE Reconstruction Artifacts, (6) Difference Map. Note the strong correlation between VAE artifacts and inpainting differences.*
 
+---
+
 ## Inpainting Comparison
 
 ![Inpainting Comparison](figures/inpainting_comparison_grid.jpeg)
 
 *Comparison of standard inpainting vs. INP-X. The difference maps reveal that standard inpainting introduces global artifacts across the entire image, while INP-X produces differences only within the masked region.*
 
+---
+
 ## Dataset
 
 We construct a **90K-image benchmark** extending Semi-Truths across 4 datasets:
+
 - CelebA-HQ
 - CityScapes
 - OpenImages
 - SUN-RGBD
 
+Dataset link:  
+https://www.kaggle.com/datasets/emirhanbilgic/inpainting-exchange/data
+
 Each dataset includes:
+
 1. **Real images** (x)
 2. **Standard inpainted images** (x̃)
 3. **Exchanged inpainted images** (x^ex)
 
 Inpainting is performed using three models:
+
 - Kandinsky 2.2
 - OpenJourney
 - Stable Diffusion v1.4
+
+---
 
 ## Results
 
@@ -92,6 +126,8 @@ Inpainting is performed using three models:
 | Sightengine | INP | 0.926 | 0.935 |
 | Sightengine | **INP-X** | **0.550** | **0.588** |
 
+---
+
 ## Localization
 
 Training on INP-X images improves detector localization performance:
@@ -100,6 +136,8 @@ Training on INP-X images improves detector localization performance:
 
 *Localization examples via GradCAM. (a) Mask indicates the inpainted region. (b) Standard inpainting triggers global attention. (c) INP-X better localizes attention to the actual edited region.*
 
+---
+
 ## Installation
 
 ```bash
@@ -107,6 +145,8 @@ git clone https://github.com/emirhanbilgic/INP-X.git
 cd INP-X
 pip install -r requirements.txt
 ```
+
+---
 
 ## Usage
 
@@ -133,6 +173,8 @@ def inpainting_exchange(original, inpainted, mask):
     return exchanged.astype(np.uint8)
 ```
 
+---
+
 ## Citation
 
 If you find this work useful, please cite:
@@ -141,10 +183,14 @@ If you find this work useful, please cite:
 @article{nebioglu-bilgic2026inpx,
   title={AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange},
   author={Nebioglu, Elif and Bilgi{\c{c}}, Emirhan and Popescu, Adrian},
-  year={2026}
+  year={2026},
+  archivePrefix={arXiv},
+  eprint={2602.00192}
 }
 ```
 
+---
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License — see the LICENSE file for details.
